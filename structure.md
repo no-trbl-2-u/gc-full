@@ -1,6 +1,6 @@
 # Groove Catcher VR -- High Score Platform
 
-# Front End Components
+# Front End Components -- PORT 3000
 
 ## Landing Page Template
 > NavBar
@@ -31,7 +31,7 @@
 >- Tournament Text      <- Input Textfield (md?)
 >- Tournament Text Preview <- <div\>Realtime<div\>
 
-# Back End Components
+# Back End Components -- PORT 4000
 
 ## Server
 >- Express
