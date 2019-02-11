@@ -8,7 +8,7 @@ const cors = require('cors');
 const app = express();
 
 // Environment Variables
-
+// TODO: Set up ENV properly for Dev ++ Prod
 // LOCAL
 // const env = require('./.env')
 // const { DBURL } = env
