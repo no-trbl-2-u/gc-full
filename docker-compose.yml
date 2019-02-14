@@ -1,0 +1,22 @@
+version: '2'
+services:
+  mongodb:
+    image: "mongo"
+    ports:
+     - "27017:27017"
+  server:
+    build: ./gc-server/
+    ports:
+      - "6200:6200"
+    volumes:
+      - ./gc-server:/usr/src/app
+    depends_on:
+      - mongodb
+  client:
+    build: ./gc-client/
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./gc-client:/usr/src/app
+    depends_on:
+      - backend

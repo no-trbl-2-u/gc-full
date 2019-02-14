@@ -13,20 +13,23 @@ const app = express();
 // const env = require('./.env')
 // const { DBURL } = env
 
-// PROD
-const { DBURL } = process.env
+// PROD (Needs to be passed {"env": URL} in docker run)
+// const { DBURL } = process.env
+
+// DOCKER LOCAL
+// const DBURL = 'mongodb://mongodb'
 
 // GraphQL Schema
 const schema = require('./Schema/schema')
 
 // Mongoose Connection
-mongoose.connect(DBURL, { useNewUrlParser: true });
-const db = mongoose.connection
+// mongoose.connect(DBURL, { useNewUrlParser: true });
+// const db = mongoose.connection
 
 // On Connection...
-db.once('open', (err) => {
-  console.log('connected to Database on mLab.');
-})
+// db.once('open', (err) => {
+//   console.log('connected to Database on mLab.');
+// })
 
 // CORS for Cross origin (server <-> client)
 app.use(cors())
