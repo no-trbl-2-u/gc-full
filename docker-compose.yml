@@ -1,22 +1,22 @@
 version: '2'
 services:
-  mongodb:
+  mongo-database:
     image: "mongo"
     ports:
      - "27017:27017"
-  server:
+  express-server:
     build: ./gc-server/
     ports:
-      - "6200:6200"
+      - "4000:4000"
     volumes:
       - ./gc-server:/usr/src/app
     depends_on:
-      - mongodb
-  client:
+      - mongo-database
+  react-client:
     build: ./gc-client/
     ports:
       - "3000:3000"
     volumes:
       - ./gc-client:/usr/src/app
     depends_on:
-      - backend
+      - express-server
