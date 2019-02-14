@@ -12,10 +12,11 @@ const app = express();
 const schema = require('./src/Schema/schema')
 
 // Server Config
-const DBURL = 'mongodb://mongodb'
+// const DBURL = 'mongodb://mongodb'
+// const DBURL2 = 'mongodb://192.168.99.100:27017/'
 
 // Initial Mongo Connection
-mongoose.connect(DBURL, { useNewUrlParser: true })
+mongoose.connect('mongodb://mongodb', { useNewUrlParser: true })
   .then(() => {
     console.log("Connected to Local Database")
   })
@@ -28,7 +29,7 @@ mongoose.connect(DBURL, { useNewUrlParser: true })
 
 // On Connection...
 // db.once('open', (err) => {
-//   console.log('connected to Database on mLab.');
+  // console.log('Connected on ONCE.');
 // })
 
 // CORS for Cross origin (server <-> client)
