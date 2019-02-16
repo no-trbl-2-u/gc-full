@@ -1,3 +1,13 @@
+Docker Commands {
+  docker prune -- ===
+    - docker rm -f $(docker ps -aq) 
+    - docker image rm -f $(docker image ls -aq) 
+  
+  docker prune -a
+    - REMOVE EVERYTHING
+}
+
+
 Use ->
   @mention
 In git commit comments to create a TODO tag in GitLab

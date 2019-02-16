@@ -1,9 +1,13 @@
 version: '3'
 services:
+  
   mongodb:
     image: "mongo:latest"
+    volumes:
+      - database:/data/db
     ports:
      - "27017:27017"
+
   express-server:
     build: ./gc-server/
     ports:
@@ -12,6 +16,7 @@ services:
       - ./gc-server:/usr/src/app
     depends_on:
       - mongodb
+
   react-client:
     build: ./gc-client/
     ports:
@@ -20,3 +25,6 @@ services:
       - ./gc-client:/usr/src/app
     depends_on:
       - express-server
+
+volumes:
+  database: 

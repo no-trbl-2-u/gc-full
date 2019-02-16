@@ -12,11 +12,12 @@ const app = express();
 const schema = require('./src/Schema/schema')
 
 // Server Config
-// const DBURL = 'mongodb://mongodb'
-// const DBURL2 = 'mongodb://192.168.99.100:27017/'
+const DBURL = 'mongodb://mongodb:27017/admin'
 
 // Initial Mongo Connection
-mongoose.connect('mongodb://mongodb', { useNewUrlParser: true })
+mongoose.connect(DBURL, {
+    useNewUrlParser: true
+  })
   .then(() => {
     console.log("Connected to Local Database")
   })
