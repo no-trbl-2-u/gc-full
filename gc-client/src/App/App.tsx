@@ -1,10 +1,20 @@
-import React from 'react'
+import React from 'react';
+import LandingPage from '../Layout/LandingPage';
+
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+
+ const client = new ApolloClient({
+   uri: 'http://express-server:4000/graphql',
+ })
 
 function App () {
-  return(
-    <div>
-      <h1>You did It!</h1>
-    </div>
+  return (
+    <ApolloProvider client={ client } >
+      <section>
+        <LandingPage />
+      </section>
+    </ApolloProvider>
   )
 }
 

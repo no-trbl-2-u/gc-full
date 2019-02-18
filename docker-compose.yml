@@ -19,6 +19,7 @@ services:
 
   react-client:
     build: ./gc-client/
+    network_mode: bridge
     ports:
       - "3000:3000"
     volumes:
